@@ -1,5 +1,6 @@
 package com.karthik.jpm.marsrover.command;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -73,7 +74,13 @@ public class CommandExecutor {
 
     private void validateSetupAndCommands(final String command) {
         Command.validation.accept(command,
-                List.of(ROVER_COMMAND_PATTERN, QUIT_COMMAND_PATTERN, SHOW_OUTPUT_COMMAND_PATTERN));
+                new ArrayList<String>() {
+                    {
+                        add(ROVER_COMMAND_PATTERN);
+                        add(QUIT_COMMAND_PATTERN);
+                        add(SHOW_OUTPUT_COMMAND_PATTERN);
+                    }
+                });
     }
 
     private Rover initRoverAndPositions(final int roverNumber, final String positionInitCommand) {
