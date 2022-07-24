@@ -68,6 +68,13 @@ public class CommandExecutorTest {
     }
 
     @Test
+    void should_print_no_rover_present_whenPrinted_without_initialization() {
+        commandExecutor.execute("S");
+        Assertions.assertThat(
+                baos.toString().trim().contains("No Rovers are present!"));
+    }
+
+    @Test
     @Disabled
     void should_exit_cli_on_QuitCommand() {
         commandExecutor.execute("Q");

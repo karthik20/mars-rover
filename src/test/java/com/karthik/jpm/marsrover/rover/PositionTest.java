@@ -70,4 +70,10 @@ public class PositionTest {
         assertEquals(Direction.WEST.getRight(), Direction.NORTH);
     }
 
+    @Test
+    void shouldThrow_ifInvalidDirectionCodeGiven() {
+        assertThrows(IllegalArgumentException.class, () -> Position.Direction.fromCode("C"));
+        assertThrows(IllegalArgumentException.class, () -> Position.Direction.fromCode("X"));
+    }
+
 }
