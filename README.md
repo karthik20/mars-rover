@@ -1,4 +1,4 @@
-![Java CI with Maven](https://github.com/karthik20/mars-rover/blob/master/.github/workflows/maven.yml/badge.svg)
+[![Java CI with Maven](https://github.com/karthik20/mars-rover/actions/workflows/maven.yml/badge.svg)](https://github.com/karthik20/mars-rover/actions/workflows/maven.yml)
 
 ## Run the application (JRE 1.8)
 The application comes with maven wrapper.
