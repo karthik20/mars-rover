@@ -8,10 +8,13 @@ import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.springframework.stereotype.Component;
+
 import com.karthik.jpm.marsrover.Plateau;
 import com.karthik.jpm.marsrover.exception.CollisionException;
 import com.karthik.jpm.marsrover.rover.Rover;
 
+@Component
 public class CommandExecutor {
     public static final String QUIT_COMMAND_PATTERN = "Q";
     public static final String SHOW_OUTPUT_COMMAND_PATTERN = "S";

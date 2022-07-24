@@ -2,6 +2,7 @@ package com.karthik.jpm.marsrover;
 
 import java.util.Scanner;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -30,8 +31,8 @@ public class MarsRoverApplication implements CommandLineRunner {
 	private Scanner scanner = new Scanner(System.in);
 	private CommandExecutor commandExecutor;
 
-	public MarsRoverApplication() {
-		this.commandExecutor = new CommandExecutor();
+	public MarsRoverApplication(final CommandExecutor commandExecutor) {
+		this.commandExecutor = commandExecutor;
 	}
 
 	@Override
