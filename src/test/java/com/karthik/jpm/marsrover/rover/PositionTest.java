@@ -8,7 +8,6 @@ import org.junit.jupiter.api.TestInstance;
 
 import com.karthik.jpm.marsrover.Position;
 import com.karthik.jpm.marsrover.Position.Direction;
-import com.karthik.jpm.marsrover.exception.CollisionException;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class PositionTest {

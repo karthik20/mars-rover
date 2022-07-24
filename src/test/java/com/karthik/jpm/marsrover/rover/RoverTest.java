@@ -1,14 +1,12 @@
 package com.karthik.jpm.marsrover.rover;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
 import com.karthik.jpm.marsrover.Plateau;
 import com.karthik.jpm.marsrover.Position;
 import com.karthik.jpm.marsrover.Position.Direction;
-import com.karthik.jpm.marsrover.exception.CollisionException;
 
 public class RoverTest {
 

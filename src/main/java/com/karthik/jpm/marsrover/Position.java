@@ -27,6 +27,13 @@ public class Position {
         return this;
     }
 
+    /**
+     * Increments x coordinate by x only if the predicate condition matches
+     * 
+     * @param predicate - Predicate to test against before incrementing x coordinate
+     * @param x         - x coordinate to increment by
+     * @return calculated position
+     */
     public Position incrementXCoordinate(Predicate<Integer> predicate, final int x) {
         if (predicate.test(this.x + x)) {
             this.x += x;
@@ -34,6 +41,13 @@ public class Position {
         return this;
     }
 
+    /**
+     * Increments x coordinate by y only if the predicate condition matches
+     * 
+     * @param predicate - Predicate to test against before incrementing y coordinate
+     * @param y         - y coordinate to increment by
+     * @return calculated position
+     */
     public Position incrementYCoordinate(Predicate<Integer> predicate, final int y) {
         if (predicate.test(this.y + y)) {
             this.y += y;
@@ -41,6 +55,13 @@ public class Position {
         return this;
     }
 
+    /**
+     * Decrements x coordinate by x only if the predicate condition matches
+     * 
+     * @param predicate - Predicate to test against before decrementing x coordinate
+     * @param x         - x coordinate to decrement by
+     * @return calculated position
+     */
     public Position decrementXCoordinate(Predicate<Integer> predicate, final int x) {
         if (predicate.test(this.x - x)) {
             this.x -= x;
@@ -48,6 +69,13 @@ public class Position {
         return this;
     }
 
+    /**
+     * Decrements y coordinate by y only if the predicate condition matches
+     * 
+     * @param predicate - Predicate to test against before decrementing y coordinate
+     * @param y         - y coordinate to decrement by
+     * @return calculated position
+     */
     public Position decrementYCoordinate(Predicate<Integer> predicate, final int y) {
         if (predicate.test(this.y - y)) {
             this.y -= y;

@@ -11,7 +11,8 @@ To run,
 The program allows to initialize multiple rovers and command them
 To initialize/Command individual rover by numbners and position and move them:
 - Commands are case-sensitive
-## Scenario 1: No collision single rover
+
+## Scenario 1: No collision - single rover
 ```
 Welcome to Mars Rover program!
 Enter Command for Rover in format:
@@ -32,7 +33,37 @@ Final Direction: EAST
 ```
 You can follow above command to control the same rover by number.
 
-## Scenario 2: Collision with rovers
+## Scenario 2: Collision with rovers on initialization
+In case of rover being initialized on a position that conflicts with another, it won't be initialized
+
+```
+Welcome to Mars Rover program!
+
+Enter Command for Rover in format:
+1: <Rover number> <Co-ordinate X, Y, Direction (E, W, N, S)> <Movements (f, b, l, r)>
+2: Q to quit
+3: S to get Rover positions
+1 3,4,N f,b
+
+Enter Command for Rover in format:
+1: <Rover number> <Co-ordinate X, Y, Direction (E, W, N, S)> <Movements (f, b, l, r)>
+2: Q to quit
+3: S to get Rover positions
+2 3,4,E r
+Error encountered: Rover already present in the position
+
+Enter Command for Rover in format:
+1: <Rover number> <Co-ordinate X, Y, Direction (E, W, N, S)> <Movements (f, b, l, r)>
+2: Q to quit
+3: S to get Rover positions
+S
+
+Rover 1 position:
+Final Coordinate: 3,4
+Final Direction: NORTH
+```
+
+## Scenario 3: Collision with rovers on movement
 
 In case of multiple rovers, if any movement might cause collision, it would prevent the further movements and the command will halt before collision.
 ```

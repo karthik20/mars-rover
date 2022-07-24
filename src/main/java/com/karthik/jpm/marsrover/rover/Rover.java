@@ -18,10 +18,10 @@ public class Rover implements Movable {
         this.position = position;
     }
 
-    Predicate<Integer> checkNewXCoordinatePredicate = (
+    private Predicate<Integer> checkNewXCoordinatePredicate = (
             newX) -> !plateau.isRoverPresentInPosition(this.getNumber(),
                     position.copy().withCoordinates(newX, position.getY()));
-    Predicate<Integer> checkNewYCoordinatePredicate = (
+    private Predicate<Integer> checkNewYCoordinatePredicate = (
             newY) -> !plateau.isRoverPresentInPosition(this.getNumber(),
                     position.copy().withCoordinates(position.getX(), newY));
 

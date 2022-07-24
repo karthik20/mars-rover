@@ -35,7 +35,7 @@ public class CommandExecutorTest {
     }
 
     @Test
-    void shouldReturn_rover_cordinates_byNumber() {
+    void shouldReturn_rover_cordinates_byNumber_noCollision() {
         commandExecutor.execute("1 1,2,E f");
         commandExecutor.execute("S");
         assertEquals("Rover 1 position:\nFinal Coordinate: 2,2\nFinal Direction: EAST", baos.toString().trim());
@@ -45,6 +45,26 @@ public class CommandExecutorTest {
         Assertions.assertThat(
                 baos.toString().trim().contains("Rover 1 position:\nFinal Coordinate: 3,2\nFinal Direction: EAST\n" +
                         "Rover 2 position:\nFinal Coordinate: 3,4\nFinal Direction: WEST"));
+    }
+
+    @Test
+    void shouldNotInitializeRover_whenCOllision_onInitialization() {
+        commandExecutor.execute("1 3,4,N f,b");
+        commandExecutor.execute("2 3,4,E r");
+        commandExecutor.execute("S");
+        Assertions.assertThat(
+                baos.toString().trim().contains(
+                        "Error encountered: Rover already present in the position\nRover 1 position:\nFinal Coordinate: 3,4\nFinal Direction: NORTH\n"));
+    }
+
+    @Test
+    void shouldNot_moveRover_whenCollision_onMovement() {
+        commandExecutor.execute("1 3,4,N f,f,r,f,f");
+        commandExecutor.execute("2 5,4,E l,f,f");
+        commandExecutor.execute("S");
+        Assertions.assertThat(
+                baos.toString().trim().contains(
+                        "Rover 1 position:\nFinal Coordinate: 5,6\nFinal Direction: EAST\n\nRover 2 position:\nFinal Coordinate: 5,5\nFinal Direction: NORTH"));
     }
 
     @Test
